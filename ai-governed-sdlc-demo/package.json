@@ -1,0 +1,37 @@
+{
+  "name": "ai-governed-sdlc-demo",
+  "version": "1.0.0",
+  "description": "Reference implementation: AI-assisted SDLC with GitHub Copilot governance, CI/CD, and security controls",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --coverage --verbose",
+    "lint": "eslint src/ tests/ --max-warnings 0",
+    "audit": "npm audit --audit-level=moderate",
+    "validate": "npm run lint && npm test && npm audit",
+    "ai:check": "bash scripts/ai-commit-check.sh"
+  },
+  "keywords": [
+    "github-copilot",
+    "ai-governance",
+    "sdlc",
+    "devsecops",
+    "ci-cd"
+  ],
+  "author": "Venkata - GitHub Copilot SME",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

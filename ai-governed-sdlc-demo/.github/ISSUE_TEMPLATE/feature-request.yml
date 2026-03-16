@@ -1,0 +1,64 @@
+name: "Feature Request (Copilot Agent Ready)"
+description: "Request a new feature — can be assigned to GitHub Copilot agent"
+title: "[Feature]: "
+labels: ["enhancement", "copilot-eligible"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        This template is designed for both human developers and GitHub Copilot agent mode.
+        If assigned to Copilot, the agent will use this context to generate implementation PRs.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: "What should this feature do?"
+      placeholder: "Describe the feature in detail..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: "What must be true for this feature to be complete?"
+      placeholder: |
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+        - [ ] Unit tests added
+        - [ ] Documentation updated
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-context
+    attributes:
+      label: Technical Context
+      description: "What files, services, or patterns should the implementation follow?"
+      placeholder: |
+        Files to modify: src/...
+        Patterns to follow: See existing services
+        Dependencies: ...
+
+  - type: dropdown
+    id: ai-eligible
+    attributes:
+      label: Can Copilot agent handle this?
+      options:
+        - "Yes — straightforward implementation"
+        - "Partial — agent generates, human refines"
+        - "No — requires human architecture decisions"
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Security & Governance Constraints
+      description: "Any security or compliance considerations?"
+      placeholder: |
+        - No PII handling
+        - Input validation required
+        - Must pass all CI gates

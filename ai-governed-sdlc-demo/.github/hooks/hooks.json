@@ -1,0 +1,16 @@
+{
+  "hooks": [
+    {
+      "event": "postToolUse",
+      "command": "bash .github/hooks/scripts/check-secrets.sh",
+      "description": "Scan for hardcoded secrets after any file write",
+      "tools": ["write_file", "replace_string_in_file"]
+    },
+    {
+      "event": "preToolUse",
+      "command": "bash .github/hooks/scripts/validate-file-access.sh",
+      "description": "Ensure agent only modifies allowed directories",
+      "tools": ["write_file"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# CODEOWNERS - Mandatory Review Assignments
+# This file enforces human-in-the-loop governance for all changes
+
+# Default: All code requires architect team review
+* @team-architects
+
+# Source code requires lead developer review
+/src/ @lead-developer @team-architects
+
+# Security-sensitive files require security team
+/src/validationMiddleware.js @security-team @lead-developer
+/.github/workflows/ @security-team @devops-lead
+
+# Tests require quality lead review
+/tests/ @quality-lead @lead-developer
+
+# Governance docs require program lead review
+/docs/ @program-lead @team-architects
+
+# CI/CD and infrastructure changes require DevOps lead
+/.github/ @devops-lead @security-team
+
+# Package dependencies require security review
+package.json @security-team @lead-developer
+package-lock.json @security-team
+
+# Copilot instructions require SME review
+/.github/copilot-instructions.md @copilot-sme @team-architects
